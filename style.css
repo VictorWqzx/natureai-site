@@ -1,0 +1,409 @@
+/* Глобальные стили и переменные */
+:root {
+    --primary-color: #4CAF50;
+    --primary-hover-color: #45a049;
+    --secondary-color: #f1f1f1;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --section-bg-color: #f9f9f9;
+    --font-family: 'Montserrat', sans-serif;
+    --container-width: 1140px;
+    --border-radius: 8px;
+}
+
+/* Сброс стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Навигация */
+.header {
+    background: var(--bg-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-toggle {
+    display: none; /* Скрыт по умолчанию на десктопах */
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    padding: 100px 0; /* Немного увеличим отступы */
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* --- Новые стили для фона --- */
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+    background-size: cover; /* Масштабирует картинку, чтобы она покрывала всю область */
+    background-position: center; /* Центрирует картинку */
+    color: #fff; /* Делаем основной текст секции белым */
+}
+
+/* --- Добавляем затемняющий оверлей для читаемости текста --- */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с 50% прозрачности */
+    z-index: 1; /* Оверлей будет под контентом */
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+/* Общие стили секций */
+section {
+    padding: 80px 0;
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--section-bg-color);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+}
+
+/* Features */
+.features-grid, .steps-grid, .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card, .step-card {
+    background: var(--bg-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover, .step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* How It Works */
+.step-card span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.step-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* Pricing */
+.pricing-card {
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card.popular {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+    position: relative;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.pricing-card .price {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.pricing-card .price span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Растягивает список, чтобы кнопка была внизу */
+}
+
+.pricing-card ul li {
+    margin-bottom: 15px;
+}
+
+/* FAQ */
+.faq-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: white;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+}
+.faq-question {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-question::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 700;
+    transition: transform 0.3s;
+    color: var(--primary-color);
+}
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.faq-answer p {
+    padding: 0 20px 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность (Responsive Design) */
+@media (max-width: 992px) {
+    .hero-container {
+    max-width: 800px; /* Ограничим ширину контента для лучшего вида */
+    /* --- Стили для позиционирования поверх оверлея --- */
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 52px; /* Можно сделать шрифт чуть крупнее */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: rgb(255, 255, 255); /* Слегка прозрачный белый для субтитра */
+}
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-image {
+        margin-top: 40px;
+    }
+    .hero-title {
+        font-size: 36px;
+    }
+
+
+@media (max-width: 768px) {
+    /* Мобильное меню */
+    .nav-list {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .nav-list.active {
+        display: flex;
+    }
+    .nav-link {
+        padding: 15px;
+        display: block;
+    }
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+    }
+    .hamburger, .hamburger::before, .hamburger::after {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color);
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+    .hamburger::before {
+        transform: translateY(-8px);
+    }
+    .hamburger::after {
+        transform: translateY(8px);
+    }
+    .nav-toggle.active .hamburger {
+        background: transparent;
+    }
+    .nav-toggle.active .hamburger::before {
+        transform: rotate(45deg);
+    }
+    .nav-toggle.active .hamburger::after {
+        transform: rotate(-45deg) translate(2px, -1px); /* коррекция позиции */
+    }
+    /* другие секции */
+    .section-title {
+        font-size: 28px;
+    }
+    .pricing-card.popular {
+        transform: scale(1); /* убираем увеличение на мобильных */
+    }
+}
