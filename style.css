@@ -76,28 +76,27 @@ body {
 }
 
 .nav-toggle {
-    display: none; /* Скрыт по умолчанию на десктопах */
+    display: none; 
 }
 
-/* Hero Section */
-/* Hero Section */
+
 .hero {
-    padding: 100px 0; /* Немного увеличим отступы */
-    min-height: 100vh; /* Занимает всю высоту экрана */
+    padding: 100px 0; 
+    min-height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     
-    /* --- Новые стили для фона --- */
+ 
     position: relative;
     background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
-    background-size: cover; /* Масштабирует картинку, чтобы она покрывала всю область */
-    background-position: center; /* Центрирует картинку */
-    color: #fff; /* Делаем основной текст секции белым */
+    background-size: cover; 
+    background-position: center; 
+    color: #fff; 
 }
 
-/* --- Добавляем затемняющий оверлей для читаемости текста --- */
+
 .hero::before {
     content: '';
     position: absolute;
@@ -105,11 +104,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Черный цвет с 50% прозрачности */
-    z-index: 1; /* Оверлей будет под контентом */
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
 }
 
-/* Кнопки */
+
 .btn {
     display: inline-block;
     padding: 15px 30px;
@@ -137,7 +136,7 @@ body {
     background-color: #e0e0e0;
 }
 
-/* Общие стили секций */
+
 section {
     padding: 80px 0;
 }
@@ -152,7 +151,6 @@ section:nth-of-type(odd) {
     margin-bottom: 60px;
 }
 
-/* Features */
 .features-grid, .steps-grid, .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -178,7 +176,7 @@ section:nth-of-type(odd) {
     font-size: 20px;
 }
 
-/* How It Works */
+
 .step-card span {
     display: inline-block;
     width: 50px;
@@ -197,7 +195,7 @@ section:nth-of-type(odd) {
 }
 
 
-/* Pricing */
+
 .pricing-card {
     background: white;
     padding: 40px;
@@ -247,14 +245,14 @@ section:nth-of-type(odd) {
 .pricing-card ul {
     list-style: none;
     margin-bottom: 30px;
-    flex-grow: 1; /* Растягивает список, чтобы кнопка была внизу */
+    flex-grow: 1; 
 }
 
 .pricing-card ul li {
     margin-bottom: 15px;
 }
 
-/* FAQ */
+
 .faq-container {
     max-width: 700px;
     margin: 0 auto;
@@ -298,7 +296,7 @@ section:nth-of-type(odd) {
     padding: 0 20px 20px;
 }
 
-/* Footer */
+
 .footer {
     background-color: #333;
     color: white;
@@ -313,17 +311,17 @@ section:nth-of-type(odd) {
     text-decoration: underline;
 }
 
-/* Адаптивность (Responsive Design) */
+/* Адаптивность */
 @media (max-width: 992px) {
     .hero-container {
-    max-width: 800px; /* Ограничим ширину контента для лучшего вида */
-    /* --- Стили для позиционирования поверх оверлея --- */
+    max-width: 800px; 
+   
     position: relative;
     z-index: 2;
 }
 
 .hero-title {
-    font-size: 52px; /* Можно сделать шрифт чуть крупнее */
+    font-size: 52px; 
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -332,7 +330,7 @@ section:nth-of-type(odd) {
 .hero-subtitle {
     font-size: 20px;
     margin-bottom: 30px;
-    color: rgb(255, 255, 255); /* Слегка прозрачный белый для субтитра */
+    color: rgb(255, 255, 255); 
 }
     }
     .hero-content {
@@ -397,13 +395,13 @@ section:nth-of-type(odd) {
         transform: rotate(45deg);
     }
     .nav-toggle.active .hamburger::after {
-        transform: rotate(-45deg) translate(2px, -1px); /* коррекция позиции */
+        transform: rotate(-45deg) translate(2px, -1px); 
     }
-    /* другие секции */
+    
     .section-title {
         font-size: 28px;
     }
     .pricing-card.popular {
-        transform: scale(1); /* убираем увеличение на мобильных */
+        transform: scale(1); 
     }
 }

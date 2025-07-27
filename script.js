@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navList.classList.toggle('active');
     });
     
-    // Закрытие меню при клике на ссылку
+    
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navList.classList.contains('active')) {
@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
             
-            // Сначала закрываем все открытые ответы
+            
             faqItems.forEach(i => {
                 i.classList.remove('active');
                 i.querySelector('.faq-answer').style.maxHeight = null;
             });
             
-            // Если текущий был закрыт, открываем его
+           
             if (!isActive) {
                 item.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
